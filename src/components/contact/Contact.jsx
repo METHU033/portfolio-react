@@ -44,7 +44,7 @@ const Contact = () => {
   return (
     <motion.div
       ref={ref}
-      className="contact"
+      className="Contact"
       variants={variants}
       initial="initial"
       whileInView="animate" // Correct usage
