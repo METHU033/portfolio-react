@@ -1,19 +1,19 @@
 import { useState } from "react"
 import { motion } from "framer-motion"
-import Links from "./links/Links"
+import Links from "./links/Links";
 import "./sidebar.scss"
-import ToggleButton from "./toggleButton/toggleButton"
+import ToggleButton from "./toggleButton/ToggleButton"; 
 
 const variants = {
   open: {
-    clipPath: "circle(100% at 50% 50%)", // Full circle covering the screen
+    clipPath: "circle(100% at 50% 50%)", 
     transition: {
       type: "spring",
       stiffness: 20,
     },
   },
   closed: {
-    clipPath: "circle(30px at 50px 50px)", // Small circle
+    clipPath: "circle(30px at 50px 50px)", 
     transition: {
       delay: 0.5,
       type: "spring",

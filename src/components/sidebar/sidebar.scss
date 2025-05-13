@@ -8,7 +8,7 @@
         height: 100vh; 
         display: flex;
         background-color: white;
-         color: black;
+        color: black;
     
     .bg {
         z-index: 1;
@@ -16,7 +16,7 @@
         top: 0;
         left: 0;
         bottom: 0;
-        width: 200px;
+        width: 400px;
         background: white;
 
         @include mobile {

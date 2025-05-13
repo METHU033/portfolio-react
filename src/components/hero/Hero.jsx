@@ -47,7 +47,7 @@ const Hero = () => {
         initial="initial" 
         animate="animate"
         >
-            <motion.h2 variants={textVariants}>D.METHUSELAH</motion.h2>
+            <motion.h2 variants={textVariants}>DUSHIME METHUSELAH</motion.h2>
             <motion.h1 variants={textVariants}>Web developer and UI designer</motion.h1>
             <motion.div  variants={textVariants} className="buttons">
                 <motion.button variants={textVariants}>See the Latest Works</motion.button>

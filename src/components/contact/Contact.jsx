@@ -24,21 +24,28 @@ const Contact = () => {
   const ref = useRef();
   const formRef = useRef();
   const [error,setError] = useState(false)
-  const [success,setSuccess] = useState(false)
-
+const [success, setSuccess] = useState(false);
+  
   const isInView = useInView(ref, { margin: "-100px" });
 
   const sendEmail = (e) => {
     e.preventDefault();
+    emailjs.init("Eg9hzYHesoD2NllGe");
 
-    emailjs.sendForm('service_k6pvzi8', '__ejs-test-mail-service__', formRef.current, {
-        publicKey: 'Eg9hzYHesoD2NllGe' ,
+    emailjs.sendForm('service_5t5af9c', 'template_4py9pt9', formRef.current, {
+        publicKey: 'tTYFAfiES0qqN7JlK' ,
       })
-      .then((result) => {
-          setSuccess(true)
-        }, (error) => {
-          setError(true)
-        });
+     .then((result) => {
+       formRef.current.reset();
+    console.log('SUCCESS!', result.text);
+    setSuccess(true);
+    setError(false);
+}, (error) => {
+    console.error('FAILED...', error.text);
+    setError(true);
+    setSuccess(false);
+});
+
   };
   
   return (
@@ -47,7 +54,7 @@ const Contact = () => {
       className="Contact"
       variants={variants}
       initial="initial"
-      whileInView="animate" // Correct usage
+      whileInView="animate"
     >
       <motion.div className="textContainer" variants={variants}>
         <motion.h1 variants={variants}>Let's work together</motion.h1>
@@ -70,7 +77,7 @@ const Contact = () => {
           className="phoneSvg"
           initial={{ opacity: 1 }}
           whileInView={{ opacity: 0 }}
-          transition={{ delay: 3, duration: 1 }}
+          transition={{ delay: 1, duration: 1 }}
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -100,7 +107,7 @@ const Contact = () => {
         onSubmit={sendEmail}
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
-          transition={{ delay: 4, duration: 1 }}
+          transition={{ delay: 2, duration: 1 }}
         >
           <input type="text" required placeholder="Name" name="name"/>
           <input type="email" required placeholder="Email" name="email"/>
