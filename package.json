@@ -4,16 +4,14 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "start": "npm run dev",
     "dev": "vite",
     "build": "npm run build",
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject",
+    "preview": "vite preview",
+    "start": "npm run dev",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d dist"
-}
-,
+  },
   "dependencies": {
     "@emailjs/browser": "^4.4.1",
     "@vercel/speed-insights": "^1.2.0",
